@@ -79,8 +79,6 @@ end)
 
 statsTab:AddLabel("------------------").TextSize = 14
 
-local nothingLabel = statsTab:AddLabel("")
-
 statsTab:AddLabel("📊 Leaderboard Stats").TextSize = 30
 
 local strengthLabel = statsTab:AddLabel("Strength: -")
@@ -93,8 +91,6 @@ local brawlsLabel = statsTab:AddLabel("Brawls: -")
 brawlsLabel.TextSize = 20
 
 statsTab:AddLabel("------------------").TextSize = 14
-
-local nothingLabel = statsTab:AddLabel("")
 
 statsTab:AddLabel("💪 Player Stats").TextSize = 30
 
@@ -110,8 +106,6 @@ local muscleKingTimeLabel = statsTab:AddLabel("Muscle King Time: -")
 muscleKingTimeLabel.TextSize = 20
 
 statsTab:AddLabel("------------------").TextSize = 14
-
-local nothingLabel = statsTab:AddLabel("")
 
 statsTab:AddLabel("🔥 Projected Strength").TextSize = 22
 

@@ -8,8 +8,6 @@ local window = library:AddWindow("Sad 1.03 | Farming", {
 
 local statsTab = window:AddTab("Stats")
 
-statsTab:AddLabel("Session Statistics").TextSize = 30
-
 local player = game.Players.LocalPlayer
 local leaderstats = player:WaitForChild("leaderstats")
 local strengthStat = leaderstats:WaitForChild("Strength")
@@ -45,7 +43,7 @@ local function FormatNumber(num)
     return FormatWithCommas(num) .. " (" .. AbbrevNumber(num) .. ")"
 end
 
-statsTab:AddLabel("Session Statistics").TextSize = 24
+statsTab:AddLabel("⏱️ Session Statistics").TextSize = 30
 
 local stopwatchLabel = statsTab:AddLabel("Session Time: 0d 0h 0m 0s")
 stopwatchLabel.TextSize = 20
@@ -81,7 +79,9 @@ end)
 
 statsTab:AddLabel("------------------").TextSize = 14
 
-statsTab:AddLabel("Leaderboard Stats").TextSize = 30
+local nothingLabel = statsTab:AddLabel("")
+
+statsTab:AddLabel("📊 Leaderboard Stats").TextSize = 30
 
 local strengthLabel = statsTab:AddLabel("Strength: -")
 strengthLabel.TextSize = 20
@@ -92,9 +92,11 @@ killsLabel.TextSize = 20
 local brawlsLabel = statsTab:AddLabel("Brawls: -")
 brawlsLabel.TextSize = 20
 
-statsTab:AddLabel("------------------").TextSize = 14
+statsTab:AddLabel("------------------").TextSize = 14local nothingLabel = tabAutomation:AddLabel("")
 
-statsTab:AddLabel("Player Stats").TextSize = 30
+local nothingLabel = statsTab:AddLabel("")
+
+statsTab:AddLabel("💪 Player Stats").TextSize = 30
 
 local goodKarmaLabel = statsTab:AddLabel("Good Karma: -")
 goodKarmaLabel.TextSize = 20
@@ -109,7 +111,9 @@ muscleKingTimeLabel.TextSize = 20
 
 statsTab:AddLabel("------------------").TextSize = 14
 
-statsTab:AddLabel("Projected Gains (Pace)").TextSize = 22
+local nothingLabel = statsTab:AddLabel("")
+
+statsTab:AddLabel("🔥 Projected Strength").TextSize = 22
 
 local projectedStrengthLabel = statsTab:AddLabel("Strength Pace: -")
 projectedStrengthLabel.TextSize = 20

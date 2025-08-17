@@ -107,7 +107,7 @@ muscleKingTimeLabel.TextSize = 20
 
 statsTab:AddLabel("------------------").TextSize = 14
 
-statsTab:AddLabel("🔥 Projected Strength").TextSize = 22
+statsTab:AddLabel("🔥 Projected Strength").TextSize = 30
 
 local projectedStrengthLabel = statsTab:AddLabel("Strength Pace: -")
 projectedStrengthLabel.TextSize = 20

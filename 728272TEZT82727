@@ -18,6 +18,7 @@ local agilityStat = player:WaitForChild("Agility")
 local evilKarmaStat = player:WaitForChild("evilKarma")
 local goodKarmaStat = player:WaitForChild("goodKarma")
 local brawlsStat = leaderstats:WaitForChild("Brawls")
+local muscleKingTimeStat = player:FindFirstChild("MuscleKingTime") or leaderstats:FindFirstChild("MuscleKingTime")
 
 local function AbbrevNumber(num)
     local abbrev = {"", "K", "M", "B", "T", "Qa", "Qi"}
@@ -125,6 +126,7 @@ local initialAgility = agilityStat.Value
 local initialEvilKarma = evilKarmaStat.Value
 local initialGoodKarma = goodKarmaStat.Value
 local initialBrawls = brawlsStat.Value
+local initialMuscleKingTime = muscleKingTimeStat and muscleKingTimeStat.Value or 0
 
 task.spawn(function()
     local lastUpdate = 0
@@ -157,6 +159,7 @@ task.spawn(function()
             initialEvilKarma = evilKarmaStat.Value
             initialGoodKarma = goodKarmaStat.Value
             initialBrawls = brawlsStat.Value
+            initialMuscleKingTime = muscleKingTimeStat and muscleKingTimeStat.Value or 0
             resetSession = false
         end
 
@@ -168,6 +171,7 @@ task.spawn(function()
         local currentEvilKarma = evilKarmaStat.Value
         local currentGoodKarma = goodKarmaStat.Value
         local currentBrawls = brawlsStat.Value
+        local currentMuscleKingTime = muscleKingTimeStat and muscleKingTimeStat.Value or 0
 
         local sessionStrengthDelta = currentStrength - initialStrength
         local sessionDurabilityDelta = currentDurability - initialDurability
@@ -177,6 +181,7 @@ task.spawn(function()
         local sessionEvilKarmaDelta = currentEvilKarma - initialEvilKarma
         local sessionGoodKarmaDelta = currentGoodKarma - initialGoodKarma
         local sessionBrawlsDelta = currentBrawls - initialBrawls
+        local sessionMuscleKingDelta = currentMuscleKingTime - initialMuscleKingTime
 
         strengthLabel.Text = "Strength: " .. FormatNumber(currentStrength) .. " | Gained: " .. FormatNumber(sessionStrengthDelta)
         rebirthsLabel.Text = "Rebirths: " .. FormatNumber(currentRebirths) .. " | Gained: " .. FormatNumber(sessionRebirthsDelta)
@@ -187,7 +192,12 @@ task.spawn(function()
         evilKarmaLabel.Text = "Evil Karma: " .. FormatNumber(currentEvilKarma) .. " | Gained: " .. FormatNumber(sessionEvilKarmaDelta)
         durabilityLabel.Text = "Durability: " .. FormatNumber(currentDurability) .. " | Gained: " .. FormatNumber(sessionDurabilityDelta)
         agilityLabel.Text = "Agility: " .. FormatNumber(currentAgility) .. " | Gained: " .. FormatNumber(sessionAgilityDelta)
-        muscleKingTimeLabel.Text = "Muscle King Time: 0 (0) | Gained: 0"
+
+        if muscleKingTimeStat then
+            muscleKingTimeLabel.Text = "Muscle King Time: " .. FormatNumber(currentMuscleKingTime) .. " | Gained: " .. FormatNumber(sessionMuscleKingDelta)
+        else
+            muscleKingTimeLabel.Text = "Muscle King Time: Not Found"
+        end
 
         if tick() - lastUpdate >= 6 then
             lastUpdate = tick()

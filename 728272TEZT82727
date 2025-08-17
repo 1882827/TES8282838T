@@ -92,7 +92,7 @@ killsLabel.TextSize = 20
 local brawlsLabel = statsTab:AddLabel("Brawls: -")
 brawlsLabel.TextSize = 20
 
-statsTab:AddLabel("------------------").TextSize = 14local nothingLabel = tabAutomation:AddLabel("")
+statsTab:AddLabel("------------------").TextSize = 14
 
 local nothingLabel = statsTab:AddLabel("")
 

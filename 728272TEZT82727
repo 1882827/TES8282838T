@@ -8,6 +8,8 @@ local window = library:AddWindow("Sad 1.03 | Farming", {
 
 local statsTab = window:AddTab("Stats")
 
+statsTab:AddLabel("Session Statistics").TextSize = 30
+
 local player = game.Players.LocalPlayer
 local leaderstats = player:WaitForChild("leaderstats")
 local strengthStat = leaderstats:WaitForChild("Strength")
@@ -79,7 +81,7 @@ end)
 
 statsTab:AddLabel("------------------").TextSize = 14
 
-statsTab:AddLabel("Leaderboard Stats").TextSize = 22
+statsTab:AddLabel("Leaderboard Stats").TextSize = 30
 
 local strengthLabel = statsTab:AddLabel("Strength: -")
 strengthLabel.TextSize = 20
@@ -92,7 +94,7 @@ brawlsLabel.TextSize = 20
 
 statsTab:AddLabel("------------------").TextSize = 14
 
-statsTab:AddLabel("Player Stats").TextSize = 22
+statsTab:AddLabel("Player Stats").TextSize = 30
 
 local goodKarmaLabel = statsTab:AddLabel("Good Karma: -")
 goodKarmaLabel.TextSize = 20
